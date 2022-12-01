@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Rapide</title>
+
+</head>
+<body>
+
+    <div id="center">
+        <div id="regle">
+            <p>But du jeu : Cliquer le plus rapidement possible sur le carré bleu qui va apparaitre. Si vous cliqué en moins d'une seconde vous pourrez accéder à l'étape suivante.</p>
+            <button id="start">Start</button>
+        </div>
+        <div id="divclick">
+
+        </div>
+        <div id="res">
+            <p>Score : </p>
+            <p id="score"></p>
+            <p id="next">Bien joué vous avez gagné. Cliqué pour accéder à l'étape suivante !</p>
+            <p id="next2">Vous avez perdu. Cliqué pour recommencer !</p>
+            <button id="next">Suivant !</button>
+        </div>
+    </div>
+
+    
+<script>
+    var start = document.getElementById('start');
+    var regle = document.getElementById('regle');
+    var divclick = document.getElementById('divclick');
+    var res = document.getElementById('res');
+    var next = document.getElementById('next');
+    var next2 = document.getElementById('next2');
+    next.style.display = "none";
+    next2.style.display = "none";
+    let time1
+    let time2
+    var compteur = 50;
+    var timer = 0;
+    divclick.style.display = "none";
+    res.style.display = "none";
+
+    start.addEventListener('click', function(){
+        compteur = 50;
+        timer = 0;
+        res.style.display = "none";
+        regle.style.display = "none";
+        next.style.display = "none";
+        next2.style.display = "none";
+        time1 = setInterval(function(){
+            compteur = compteur - 10
+            if(compteur == 0){
+                divclick.style.display = "block";
+                
+                time2 = setInterval(function(){
+                    timer = timer + 10
+                    
+                }, 10);
+            }
+        }, 1000);
+    });
+    divclick.addEventListener('click', function(){
+        res.style.display = "block";
+        divclick.style.display = "none";
+        regle.style.display = "block";
+        document.getElementById('score').innerHTML = timer;
+        if(timer < 1000){
+            document.getElementById('next').style.display = "block";
+            document.getElementById('next2').style.display = "none";
+        }
+        else{
+            document.getElementById('next').style.display = "none";
+            document.getElementById('next2').style.display = "block";
+        }
+        compteur = 50;
+        timer = 0;
+        clearTimeout(time1);
+        clearTimeout(time2);
+    });
+
+</script>
+</body>
+</html>
+
+<style>
+#divclick{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(0, 4, 255);
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+#center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    background-color: red;
+}
+
+</style>

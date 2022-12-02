@@ -1,0 +1,81 @@
+<html>
+    <head> 
+
+    </head>
+
+    <body onload="main()">
+        <p>e<sup>0</sup> = ? </p> <p id="res"></p> <p id="val"></p>
+        <input type="number" id="1" name="quantity" min="1" max="9">
+        <input type="number" id="2" name="quantity" min="1" max="9">
+        <input type="number" id="3" name="quantity" min="1" max="9">
+        <input type="number" id="4" name="quantity" min="1" max="9">
+        <input type="number" id="5" name="quantity" min="1" max="9">
+        <p><button onclick="check()" id="tunemzttrapepas">valider</button></p>
+    </body>
+</html>
+
+<script>
+    function check(){
+        let range = document.getElementById("1");
+        let res = document.getElementById("res");
+        if (range.value == "1" && document.getElementById("2").value == 0 && document.getElementById("3").value == 0 && document.getElementById("4").value == 0 && document.getElementById("5").value == 0) {
+            alert("Lui il n'a pas que 2 neurone !");
+            document.location.href = "enigme1.html";
+        }
+        else {
+            alert("T'es pas une lumière toi !");
+        }
+    }
+
+    function update(){
+        let btn = document.getElementById("val");
+        let range = document.getElementById("points");
+        btn.innerHTML = range.value;
+    }
+    
+    function main(){
+        document.getElementById("1").value = 5;
+        document.getElementById("2").value = 6;
+        document.getElementById("3").value = 8;
+        document.getElementById("4").value = 2;
+        document.getElementById("5").value = 9;
+        let range = document.getElementById("points");
+        range.value = Math.random() * 100000 * 2 - 100000;
+        setInterval(update,10);
+    }
+</script>
+
+<style>
+    *{
+        background-color:red ;
+    }
+
+    .conteneur{
+        padding: 0%;
+        margin: 0%;
+        width: 100%;
+        display: flex;
+        text-align: center;
+    }
+    .cote{
+        width: 25%;
+    }
+    .centre{
+        width: 50%;
+    }
+    button{
+        margin-right: 100%;
+        color: white;
+        background-color: red;
+        border: 3px solid white;
+        transition: 1s;
+    }
+    button:hover{
+        font-size: xx-large;
+        border: 30px solid white;
+        transition: 0s;
+    }
+    h1{
+        margin-left: 50%;
+    }
+</style>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Enigme</title>
+  
+</head>
+<body>
+ 
+    <div>
+        <div id="ligne">
+            <img src="img/arbre.png" alt="table" width="200" height="200">
+            <p>+</p>
+            <img src="img/arbre.png" alt="table" width="200" height="200">
+            <p>+</p>
+            <img src="img/arbre.png" alt="table" width="200" height="200">
+            <p>=</p>
+            <p>30</p>
+        </div>
+        <div id="ligne">
+            <img src="img/table.png" alt="table" width="200" height="200">
+            <p>+</p>
+            <img src="img/table.png" alt="table" width="200" height="200">
+            <p>+</p>
+            <img src="img/table.png" alt="table" width="200" height="200">
+            <p>=</p>
+            <p>60</p>
+        </div>
+        <div id="ligne">
+            <img src="img/avion.png" alt="table" width="200" height="200">
+            <p>+</p>
+            <img src="img/avion.png" alt="table" width="200" height="200">
+            <p>+</p>
+            <img src="img/avion.png" alt="table" width="200" height="200">
+            <p>+</p>
+            <img src="img/avion.png" alt="table" width="200" height="200">
+            <p>=</p>
+            <p>8</p>
+        </div>
+        <div id="ligne">
+            <img src="img/avion.png" alt="table" width="200" height="200">
+            <p>+</p>
+            <img src="img/table.png" alt="table" width="200" height="200">
+            <p>+</p>
+            <img src="img/arbrion.png" alt="table" width="200" height="200">
+            <p>+</p>
+            <img src="img/avion.png" alt="table" width="200" height="200">
+            <p>=</p>
+            <p>?</p>
+            
+        </div>
+        <div id="ligne">
+            <input id="inputRep" type="text">
+            <button id="valide" >Valider</button>
+        </div>
+    </div>
+
+
+<script>
+ var inputRep = document.getElementById('inputRep');
+    var valide = document.getElementById('valide');
+    valide.addEventListener('click', function(){
+        if(inputRep.value == 36){
+            alert('Bravo');
+            document.location.href = "captcha.html";
+        }else{
+            alert('Perdu');
+        }
+    });
+
+
+
+</script>
+</body>
+</html>
+
+<style>
+
+#ligne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+p {
+    font-size: 70px;
+    margin: 0 20px;
+}
+body {
+    background-color: #ff0000;
+
+}
+
+</style>

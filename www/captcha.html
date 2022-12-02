@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>CAPTCHA</title>
+</head>
+<script src="son.js"></script>
+<body id="body">
+ 
+    <div id="captcha1">
+        <h3>Valide le captcha</h3>
+        <button id="btnCaptcha1">VALIDE !!!</button>
+
+
+    </div>
+    <div id="captcha2">
+        <h3>Valide le super captcha</h3>
+        <div>
+            <input type="checkbox" id="captcha2CheckBox" name="captcha2CheckBox">
+            <label for="captcha2CheckBox">CHECK SA</label>
+          </div>
+
+        <button id="btnCaptcha2">VALIDE !!!</button>
+    </div>
+
+    <div id="captcha3">
+        <h3>Valide le super duper méga captcha</h3>
+        <button id="btnCaptcha3">VALIDE !!!</button>
+    </div>
+
+    <div id="captcha4">
+        
+    </div>
+
+
+
+<script>
+    var nbCaptcha = Math.floor(Math.random() * 13) + 3;;
+    var captcha1 = document.getElementById('captcha1');
+    var btnCaptcha1 = document.getElementById('btnCaptcha1');
+    var captcha2 = document.getElementById('captcha2');
+    var btnCaptcha2 = document.getElementById('btnCaptcha2');
+    var captcha2CheckBox = document.getElementById('captcha2CheckBox');
+    var captcha3 = document.getElementById('captcha3');
+    var btnCaptcha3 = document.getElementById('btnCaptcha3');
+    var captcha4 = document.getElementById('captcha4');
+    
+    var cheval = document.getElementById('cheval');
+
+    function a() {
+        let temp = Math.floor(Math.random()*60);
+        if(temp<10){
+            adroite.play()
+        }else if(temp < 20){
+            againtoujourpasla.play()
+        }else if(temp < 30){
+            agauche.play()
+        }else if(temp < 40){
+            plusvite.play()
+        }else if(temp < 50){
+            agauche2.play()
+        }else{
+            toujourpasla.play()
+        }
+        
+    }
+
+
+    captcha2.style.display = 'none';
+    captcha3.style.display = 'none';
+    captcha4.style.display = 'none';
+
+    btnCaptcha1.addEventListener('click', function() {
+        captcha1.style.display = 'none';
+        captcha2.style.display = 'block';
+    });
+    btnCaptcha2.addEventListener('click', function() {
+        if(captcha2CheckBox.checked) {
+            captcha1.style.display = 'none';
+            captcha2.style.display = 'none';
+            captcha3.style.display = 'block';
+        } else {
+            alert('Captcha non validé reessaye');
+        }
+        ;
+    });
+
+    captcha3.addEventListener('mouseover', function() {
+        if(nbCaptcha != 0) {
+            captcha3.style.marginTop = Math.floor(Math.random() * 100)*10 + 'px';
+            captcha3.style.marginLeft = Math.floor(Math.random() * 100)*10 + 'px';
+            captcha3.style.rotate = Math.floor(Math.random() * 360) + 'deg';
+            nbCaptcha--;
+        }
+    });
+    btnCaptcha3.addEventListener('click', function() {
+            captcha1.style.display = 'none';
+            captcha2.style.display = 'none';
+            captcha3.style.display = 'none';
+            captcha4.style.display = 'block';
+            let txt = document.getElementById('body').innerHTML +'<button id="btnCaptcha4" style="margin-top: '+Math.floor(Math.random() * 100)+'%; margin-left: '+Math.floor(Math.random() * 100)+'%; position: absolute;">VALIDE !!!</button>';
+            for(let i = 0; i<100; i++){
+                let temp = Math.floor(Math.random() * 100);
+                if(temp < 33){
+                    txt = txt + '<img id="img'+i+'" onclick="shoot('+i+')" src="https://www.cieletespace.fr/media/default/0001/19/SOLEIL-CALME_900-5eb4.jpeg" style="margin-top: '+Math.floor(Math.random() * 100)+'%; margin-left: '+Math.floor(Math.random() * 100)+'%; position: absolute; width: 100px; height: 100px;">';
+                }else if(temp < 66){
+                    txt = txt + '<img id="img'+i+'" onclick="shoot('+i+')" src="https://img.passeportsante.net/1200x675/2021-05-03/i102046-fraise-nu.webp" style="margin-top: '+Math.floor(Math.random() * 100)+'%; margin-left: '+Math.floor(Math.random() * 100)+'%; position: absolute; width: 100px; height: 100px;">';
+                }else{
+                    txt = txt + '<img id="img'+i+'" onclick="shoot('+i+')" style="margin-top: '+Math.floor(Math.random() * 100)+'%; margin-left: '+Math.floor(Math.random() * 100)+'%; position: absolute;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMsSPdtpBMoPNX1iY54d1AcBufaX_FRcvyAA&usqp=CAU" >';
+                }
+            }
+            document.getElementById('body').innerHTML = txt;
+            var btnCaptcha4 = document.getElementById('btnCaptcha4');
+            btnCaptcha4.addEventListener('click', function() {
+                document.location.href = "pinguin.html";
+            })
+       
+    });
+
+    function shoot(id) {
+        document.getElementById('img'+id).style.display = 'none';
+        a();
+    }
+    
+   
+</script>
+
+</body>
+</html>
+
+<div ></div>
+<style>
+
+#captcha1 {
+    width: 300px;
+    height: 100px;
+    background-color: #ccc;
+    border: 1px solid #000;
+    padding: 0;
+    margin: 0;
+    margin-left: 30%;
+    margin-top: 25%;
+    
+}
+#captcha2 {
+    width: 300px;
+    height: 100px;
+    background-color: rgb(8, 233, 8);
+    border: 1px solid rgb(4, 0, 255);
+    padding: 0;
+    margin: 0;
+    margin-left: 30%;
+    margin-top: 25%;
+    
+}
+#captcha3 {
+    width: 300px;
+    height: 100px;
+    background-color: rgb(8, 233, 8);
+    border: 1px solid rgb(4, 0, 255);
+    padding: 0;
+    margin: 0;
+    margin-left: 30%;
+    margin-top: 25%;
+    
+}
+body {
+    background-color: rgb(255, 0, 0);
+}
+
+
+
+</style>

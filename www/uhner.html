@@ -1,0 +1,74 @@
+<html>
+    <head> 
+
+    </head>
+
+    <body onload="main()">
+        <p>1 + 1 - 1 = ? </p> <p id="res"></p> <p id="val"></p>
+        <input type="range" id="points" name="points" min="-100000" max="100000">
+        <p><button onclick="check()" id="tunemzttrapepas">valider</button></p>
+    </body>
+</html>
+
+<script>
+    function check(){
+        let range = document.getElementById("points");
+        let res = document.getElementById("res");
+        if (range.value != "1") {
+            alert("T'es pas une lumière toi !");
+        }
+        else {
+            alert("Lui il n'a pas que 2 neurone !");
+            document.location.href = "pmnokj.html";
+        }
+    }
+
+    function update(){
+        let btn = document.getElementById("val");
+        let range = document.getElementById("points");
+        btn.innerHTML = range.value;
+    }
+
+    function main(){
+        let range = document.getElementById("points");
+        range.value = Math.random() * 100000 * 2 - 100000;
+        setInterval(update,10);
+    }
+</script>
+
+<style>
+    *{
+        background-color:red ;
+    }
+    input{
+        width: 100%;
+    }
+    .conteneur{
+        padding: 0%;
+        margin: 0%;
+        width: 100%;
+        display: flex;
+        text-align: center;
+    }
+    .cote{
+        width: 25%;
+    }
+    .centre{
+        width: 50%;
+    }
+    button{
+        margin-right: 100%;
+        color: white;
+        background-color: red;
+        border: 3px solid white;
+        transition: 1s;
+    }
+    button:hover{
+        font-size: xx-large;
+        border: 30px solid white;
+        transition: 0s;
+    }
+    h1{
+        margin-left: 50%;
+    }
+</style>

@@ -4,7 +4,7 @@
     </head>
 
     <body onload="main()">
-        <p>e<sup>1</sup> = ? </p> <p id="res"></p> <p id="val"></p>
+        <p>1 + 1 - 1 = ? </p> <p id="res"></p> <p id="val"></p>
         <input type="range" id="points" name="points" min="-100000" max="100000">
         <p><button onclick="check()" id="tunemzttrapepas">valider</button></p>
     </body>
@@ -15,10 +15,11 @@
         let range = document.getElementById("points");
         let res = document.getElementById("res");
         if (range.value != "1") {
-            res.innerHTML = "t es nul";
+            alert("T'es pas une lumière toi !");
         }
         else {
-            res.innerHTML = "t pas con toi";
+            alert("Lui il n'a pas que 2 neurone !");
+            document.location.href = "pmnokj.html";
         }
     }
 
@@ -27,7 +28,7 @@
         let range = document.getElementById("points");
         btn.innerHTML = range.value;
     }
-    
+
     function main(){
         let range = document.getElementById("points");
         range.value = Math.random() * 100000 * 2 - 100000;

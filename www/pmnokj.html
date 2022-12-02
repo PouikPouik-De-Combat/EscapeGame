@@ -4,7 +4,7 @@
     </head>
 
     <body onload="main()">
-        <p>ln(e) = ? </p> <p id="res"></p> <p id="val"></p>
+        <p>e<sup>0</sup> = ? </p> <p id="res"></p> <p id="val"></p>
         <input type="range" id="points" name="points" min="-100000" max="100000">
         <p><button onclick="check()" id="tunemzttrapepas">valider</button></p>
     </body>
@@ -15,10 +15,11 @@
         let range = document.getElementById("points");
         let res = document.getElementById("res");
         if (range.value != "1") {
-            res.innerHTML = "t es nul";
+            alert("T'es pas une lumière toi !");
         }
         else {
-            res.innerHTML = "t pas con toi";
+            alert("Lui il n'a pas que 2 neurone !");
+            document.location.href = "enigme1.html";
         }
     }
 

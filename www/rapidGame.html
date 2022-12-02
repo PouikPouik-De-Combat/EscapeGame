@@ -18,8 +18,11 @@
         <div id="res">
             <p>Score : </p>
             <p id="score"></p>
-            <p id="next">Bien joué vous avez gagné. Cliqué pour accéder à l'étape suivante !</p>
-            <p id="next2">Vous avez perdu. Cliqué pour recommencer !</p>
+            <div id="next2">
+                <p>Bien joué vous avez gagné. Cliqué pour accéder à l'étape suivante !</p>
+                <p >Vous avez perdu. Cliqué pour recommencer !</p>
+            </div>
+            
             <button id="next">Suivant !</button>
         </div>
     </div>
@@ -78,6 +81,10 @@
         clearTimeout(time1);
         clearTimeout(time2);
     });
+
+    next.addEventListener('click', function () {
+        document.location.href = "finGagante.html";
+    })
 
 </script>
 </body>

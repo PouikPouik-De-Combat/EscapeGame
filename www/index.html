@@ -6,57 +6,49 @@
 
 <body onload="main()">
 
-    <input type="image" src="beboo.gif" onclick="audio.play ( )">
-
     <div class="conteneur">
         <div class="cote" id="cote1">
 
         </div>
+
         <div class="centre">
-            <h1 >suivez les instructions pour la recevoir</h1>
-            <p><a href="iqEDGUYEGFEFGUY.html"><button id="tunemzttrapepas">click ici</button></a></p>
-            <div class="conteneur">
-                <img src="beboo.gif" alt="" class="cote">
-                <img src="imageDeBAse.png" alt="" class="centre">
-                <img src="beboo.gif" alt="" class="cote">
-            </div>
+                <h1 >suivez les instructions pour la recevoir</h1>
+                <p><a href="pm.html"><button id="tunemzttrapepas">click ici</button></a></p>
+                <div class="conteneur">
+                    <img src="./img/beboo.gif" alt="" class="cote">
+                    <img src="./img/imageDeBAse.png" alt="" class="centre">
+                    <img src="./img/beboo.gif" alt="" class="cote">
+                </div>
 
-            
-           
-            <div class="conteneur">
-                <img src="winner.gif" alt="" class="cote">
-                <img src="winner2.gif" alt="" class="centre">
-                <img src="winner.gif" alt="" class="cote">
-            </div>
+                
+               
+                <div class="conteneur">
+                    <img src="./img/winner.gif" alt="" class="cote">
+                    <img src="./img/winner2.gif" alt="" class="centre">
+                    <img src="./img/winner.gif" alt="" class="cote">
+                </div>
 
-            <div class="conteneur">
-                <img src="beboo.gif" alt="" class="cote">
-                <img src="imageDeBase2.png" alt="" class="centre">
-                <img src="beboo.gif" alt="" class="cote">
-            </div>
+                <div class="conteneur">
+                    <img src="./img/beboo.gif" alt="" class="cote">
+                    <img src="./img/imageDeBase2.png" alt="" class="centre">
+                    <img src="./img/beboo.gif" alt="" class="cote">
+                </div>
         </div>
         
         <div class="cote" id="cote2">
         </div>
     
     </div>
-    <audio controls autoplay>
-        <source src="proute.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-      </audio> 
+
 </body>
 </html>
 
 <script>
 
-   var audio = new Audio("proute.mp3");
-audio.oncanplaythrough = function ( ) { }
-audio.onended = function ( ) { }
-
     function bandrole(id){
         let txt = "";
         for (let index = 0; index < 10; index++) {
-            txt = txt + '<img src="explosion.gif" alt="" width="200" height="200">';
+            txt = txt + '<marquee behavior="alternate"><img src="./img/explosion.gif" alt="" width="200" height="200"></marquee>';
         }
         document.getElementById(id).innerHTML=txt;
     }

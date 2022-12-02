@@ -1,11 +1,11 @@
 const express = require('express');
 
 const app = express();
-const pathHTML = "./www/";
+const pathHTML = "./www";
 const PORT = 8081;
 
 
-app.use(express.static(pathHTML));
+app.use("/",express.static(pathHTML));
 
 app.get("./", (req,res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');

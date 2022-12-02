@@ -51,7 +51,7 @@
         </div>
         <div id="ligne">
             <input id="inputRep" type="text">
-            <button id="valide">Valider</button>
+            <button id="valide" >Valider</button>
         </div>
     </div>
 
@@ -62,6 +62,7 @@
     valide.addEventListener('click', function(){
         if(inputRep.value == 34){
             alert('Bravo');
+            document.location.href = "captcha.html";
         }else{
             alert('Perdu');
         }

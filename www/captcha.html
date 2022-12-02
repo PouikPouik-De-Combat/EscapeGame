@@ -43,7 +43,7 @@
     var captcha3 = document.getElementById('captcha3');
     var btnCaptcha3 = document.getElementById('btnCaptcha3');
     var captcha4 = document.getElementById('captcha4');
-    var btnCaptcha4 = document.getElementById('btnCaptcha4');
+    
     var cheval = document.getElementById('cheval');
 
     
@@ -82,7 +82,7 @@
             captcha3.style.display = 'none';
             captcha4.style.display = 'block';
             let txt = document.getElementById('body').innerHTML +'<button id="btnCaptcha4" style="margin-top: '+Math.floor(Math.random() * 100)+'%; margin-left: '+Math.floor(Math.random() * 100)+'%; position: absolute;">VALIDE !!!</button>';
-            for(let i = 0; i<600; i++){
+            for(let i = 0; i<100; i++){
                 let temp = Math.floor(Math.random() * 100);
                 if(temp < 33){
                     txt = txt + '<img id="img'+i+'" onclick="shoot('+i+')" src="https://www.cieletespace.fr/media/default/0001/19/SOLEIL-CALME_900-5eb4.jpeg" style="margin-top: '+Math.floor(Math.random() * 100)+'%; margin-left: '+Math.floor(Math.random() * 100)+'%; position: absolute; width: 100px; height: 100px;">';
@@ -93,12 +93,18 @@
                 }
             }
             document.getElementById('body').innerHTML = txt;
+            var btnCaptcha4 = document.getElementById('btnCaptcha4');
+            btnCaptcha4.addEventListener('click', function() {
+                document.location.href = "pinguin.html";
+            })
        
     });
 
     function shoot(id) {
         document.getElementById('img'+id).style.display = 'none';
     }
+    
+   
 </script>
 
 </body>

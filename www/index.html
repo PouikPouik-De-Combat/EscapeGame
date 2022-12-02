@@ -4,14 +4,15 @@
 
 </header>
 <script src="son.js"></script>
-<body onload="main()">
-    
+<body onload="main()" style="z-index:2;">
+    <img id="chat" onclick="miaou()" style="position:absolute;height: 100px; width: 100px;"  src="img/chat.png">
+    <p id="miaou" style="position:absolute;"></p>
     <div class="conteneur">
         <div class="cote" id="cote1">
 
         </div>
             <div class="centre">
-                <marquee scrollamount="50"><h1 id="title">suivez les instructions pour la recevoir</h1></marquee>
+                <marquee scrollamount="50" behavior="alternate"><h1 id="title">suivez les instructions pour la recevoir</h1></marquee>
                 <p><a href="pm.html"><button id="tunemzttrapepas">click ici</button></a></p>
                 <div class="conteneur">
                     <img src="./img/beboo.gif" alt="" class="cote">
@@ -33,18 +34,33 @@
                     <img src="./img/beboo.gif" alt="" class="cote">
                 </div>
         </div>
-        
         <div class="cote" id="cote2">
         </div>
-    
     </div>
-
 </body>
 </html>
 
 
 
 <script>
+
+    function miaou() {
+        let miaou = document.getElementById("miaou");
+        miaou.innerHTML = '<img style="height:400%; width:400%" src="img/miaou.png">';
+        miaou.style.marginTop = Math.floor(Math.random() * 100)*10 + 'px';
+        miaou.style.marginLeft = Math.floor(Math.random() * 100)*10 + 'px';
+        console.log("done")
+        setTimeout(function() {
+            miaou.innerHTML = '';
+        }, 500)
+    }
+
+    function chat() {
+        let chat = document.getElementById("chat");
+        chat.style.marginTop = Math.floor(Math.random() * 100)*10 + 'px';
+        chat.style.marginLeft = Math.floor(Math.random() * 100)*10 + 'px';
+    }
+
     function random(input){
         var colours = [
             "red",
@@ -65,7 +81,7 @@
     function bandrole(id){
         let txt = "";
         for (let index = 0; index < 10; index++) {
-            txt = txt + '<marquee behavior="alternate"><img src="./img/explosion.gif" alt="" width="200" height="200"></marquee>';
+            txt = txt + '<marquee scrollamount="'+ Math.floor(Math.random()*50) +'" behavior="alternate"><img src="./img/explosion.gif" alt="" width="200" height="200"></marquee>';
         }
         document.getElementById(id).innerHTML=txt;
     }
@@ -76,6 +92,7 @@
         btn
     }
     function main(){
+        setInterval(chat,1200);
         random("suivez les instructions pour la recevoir")
         if(!alert("bonjour vous venez de gagner une RTX 4090 ti 64go")) {
             generique.play();

@@ -4,6 +4,8 @@
     </head>
 
     <body onload="main()">
+        <img id="chat" onclick="miaou()" style="position:absolute;height: 100px; width: 100px;"  src="img/chat.png">
+        <p id="miaou" style="position:absolute;"></p>
         <p>e<sup>0</sup> = ? </p> <p id="res"></p> <p id="val"></p>
         <input type="number" id="1" name="quantity" min="1" max="9">
         <input type="number" id="2" name="quantity" min="1" max="9">
@@ -27,21 +29,29 @@
         }
     }
 
-    function update(){
-        let btn = document.getElementById("val");
-        let range = document.getElementById("points");
-        btn.innerHTML = range.value;
-    }
-    
     function main(){
         document.getElementById("1").value = 5;
         document.getElementById("2").value = 6;
         document.getElementById("3").value = 8;
         document.getElementById("4").value = 2;
         document.getElementById("5").value = 9;
-        let range = document.getElementById("points");
-        range.value = Math.random() * 100000 * 2 - 100000;
-        setInterval(update,10);
+        setInterval(chat,1200);
+    }
+    function miaou() {
+        let miaou = document.getElementById("miaou");
+        miaou.innerHTML = '<img style="height:400%; width:400%" src="img/miaou.png">';
+        miaou.style.marginTop = Math.floor(Math.random() * 100)*10 + 'px';
+        miaou.style.marginLeft = Math.floor(Math.random() * 100)*10 + 'px';
+        console.log("done")
+        setTimeout(function() {
+            miaou.innerHTML = '';
+        }, 500)
+    }
+
+    function chat() {
+        let chat = document.getElementById("chat");
+        chat.style.marginTop = Math.floor(Math.random() * 100)*10 + 'px';
+        chat.style.marginLeft = Math.floor(Math.random() * 100)*10 + 'px';
     }
 </script>
 

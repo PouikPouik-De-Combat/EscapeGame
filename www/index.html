@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>test</title>
-</head>
-<body>
-	<h1>let's go</h1>
+<header>
+
+</header>
+
+<body onload="main()">
+
+    <script>
+        
+    </script>
+    <div class="conteneur">
+        <div class="cote" id="cote1">
+
+        </div>
+        <div class="centre">
+            <h1 >suivez les instructions pour la recevoir</h1>
+            <p><a href="iqEDGUYEGFEFGUY.html"><button id="tunemzttrapepas">click ici</button></a></p>
+            <div class="conteneur">
+                <img src="beboo.gif" alt="" class="cote">
+                <img src="imageDeBAse.png" alt="" class="centre">
+                <img src="beboo.gif" alt="" class="cote">
+            </div>
+
+            
+           
+            <div class="conteneur">
+                <img src="winner.gif" alt="" class="cote">
+                <img src="winner2.gif" alt="" class="centre">
+                <img src="winner.gif" alt="" class="cote">
+            </div>
+
+            <div class="conteneur">
+                <img src="beboo.gif" alt="" class="cote">
+                <img src="imageDeBase2.png" alt="" class="centre">
+                <img src="beboo.gif" alt="" class="cote">
+            </div>
+        </div>
+        
+        <div class="cote" id="cote2">
+        </div>
+    
+    </div>
+    
 </body>
 </html>
+
+<script>
+
+    function bandrole(id){
+        let txt = "";
+        for (let index = 0; index < 10; index++) {
+            txt = txt + '<img src="explosion.gif" alt="" width="200" height="200">';
+        }
+        document.getElementById(id).innerHTML=txt;
+    }
+
+    function move(){
+        let btn = document.getElementById("tunemzttrapepas");
+        btn.position = "absolute";
+        btn
+    }
+    function main(){
+        alert("bonjour vous venez de gagner une RTX 4090 ti 64go");
+        bandrole("cote1");
+        bandrole("cote2");
+    }
+</script>
+
+
+
+<style>
+    *{
+        background-color:red ;
+    }
+    .conteneur{
+        padding: 0%;
+        margin: 0%;
+        width: 100%;
+        display: flex;
+        text-align: center;
+    }
+    .cote{
+        width: 25%;
+    }
+    .centre{
+        width: 50%;
+    }
+    button{
+        margin-right: 100%;
+        color: white;
+        background-color: red;
+        border: 3px solid white;
+        transition: 1s;
+    }
+    button:hover{
+        margin-left: 100%;
+        font-size: xx-large;
+        border: 30px solid white;
+        transition: 1s;
+    }
+    button:active{
+        border: 3000px solid white;
+        transition: 0s;
+    }
+    h1{
+        margin-left: 50%;
+    }
+</style>

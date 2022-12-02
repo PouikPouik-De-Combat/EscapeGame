@@ -1,0 +1,149 @@
+<html>
+    <header>
+
+    </header>
+
+    <body onload="main()">
+        <h1>bienvenue en enfer bis 2 le retour du roi remaster</h1>
+        <div id="grille"></div>
+    </body>
+</html>
+
+<script>
+    let tourBot = true;
+    let fini = false;
+    let W = 5;
+    let H = 5;
+    function genGrille(w,h) {
+        let txt = "<table>";
+        for (let x = 0; x < h ; x++) {
+            txt = txt + "<tr>";
+            for (let y = 0; y < w; y++) {
+                if(y == 0 || x == 0 || y == w-1 || x == h-1){
+                    txt = txt + "<td id='"+x+y+"'' style='border:none;' onclick='check(\""+x+y+"\")'> </<td>";
+                }else{
+                    txt = txt + "<td id='"+x+y+"'' onclick='check(\""+x+y+"\")' > </<td>";
+                }
+                
+                
+            }
+            txt = txt + "</tr>";
+            
+        }
+        txt = txt + "</table>";
+        document.getElementById("grille").innerHTML = txt;
+    }
+    function update() {
+        if(fini){
+            if(gagne("X")){
+                alert("T es nul !");
+                document.location.href="pinguin.html";
+            }else{
+                alert("Le géni !");
+                document.location.href="pinguin.html";
+            }
+        }
+        if(tourBot && fini == false){
+            document.getElementById(""+Math.floor(Math.random()*H)+Math.floor(Math.random()*W)).innerHTML = "X";
+            tourBot = false;
+        }
+        if(gagne("X") || gagne("O")){
+            fini = true;
+            
+        }
+        
+    }
+    function get(x,y){
+        return document.getElementById(""+x+y).innerHTML;
+    }
+    function gagne(ltr) {
+        let res = false;
+        for (let x = 0; x < W; x++) {
+            for (let y = 1; y < H-1; y++) {
+                if(get(x,y-1) == ltr && get(x,y) == ltr && get(x,y+1) == ltr){
+                    res = true
+                }
+                
+            }
+        }
+        for (let y = 0; y < H; y++) {
+            for (let x = 1; x < W-1; x++) {
+                if(get(x-1,y) == ltr && get(x,y) == ltr && get(x+1,y) == ltr){
+                    res = true
+                }
+                
+            }
+        }
+
+        for (let y = 1; y < H-1; y++) {
+            for (let x = 1; x < W-1; x++) {
+                if(get(x-1,y-1) == ltr && get(x,y) == ltr && get(x+1,y+1) == ltr){
+                    res = true
+                }
+                if(get(x-1,y+1) == ltr && get(x,y) == ltr && get(x+1,y-1) == ltr){
+                    res = true
+                }
+                
+            }
+        }
+
+
+        return res
+    }
+    function check(id) {
+        if (tourBot == false && fini == false) {
+            document.getElementById(id).innerHTML = "O";
+            tourBot = true
+        }
+    }
+    function main() {
+        genGrille(W,H);
+        setInterval(update,10);
+    }
+
+</script>
+<style>
+    *{
+        background-color:red ;
+    }
+    table{
+        padding: 0%;
+        margin: 0%;
+    }
+    td{
+        border: solid white 3px;
+        height: 50px;
+        width: 50px;
+    }
+    input{
+        width: 100%;
+    }
+    .conteneur{
+        padding: 0%;
+        margin: 0%;
+        width: 100%;
+        display: flex;
+        text-align: center;
+    }
+    .cote{
+        width: 25%;
+    }
+    .centre{
+        width: 50%;
+    }
+    button{
+        margin-right: 100%;
+        color: white;
+        background-color: red;
+        border: 3px solid white;
+        transition: 1s;
+    }
+    button:hover{
+        font-size: xx-large;
+        border: 30px solid white;
+        transition: 0s;
+    }
+    h1{
+        margin-left: 50%;
+    }
+</style>

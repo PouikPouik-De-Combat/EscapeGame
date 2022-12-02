@@ -3,11 +3,33 @@
 
     </head>
 
-    <body>
+    <body onload="main()">
+        <img id="chat" onclick="miaou()" style="position:absolute;height: 100px; width: 100px;"  src="img/chat.png">
+        <p id="miaou" style="position:absolute;"></p>
         <p><a href="uhner.html"><button id="tunemzttrapepas">click ici</button></a></p>
     </body>
 </html>
+<script>
+    function miaou() {
+        let miaou = document.getElementById("miaou");
+        miaou.innerHTML = '<img style="height:400%; width:400%" src="img/miaou.png">';
+        miaou.style.marginTop = Math.floor(Math.random() * 100)*10 + 'px';
+        miaou.style.marginLeft = Math.floor(Math.random() * 100)*10 + 'px';
+        console.log("done")
+        setTimeout(function() {
+            miaou.innerHTML = '';
+        }, 500)
+    }
 
+    function chat() {
+        let chat = document.getElementById("chat");
+        chat.style.marginTop = Math.floor(Math.random() * 100)*10 + 'px';
+        chat.style.marginLeft = Math.floor(Math.random() * 100)*10 + 'px';
+    }
+    function main(){
+        setInterval(chat,1200);
+    }
+</script>
 
 <style>
     *{

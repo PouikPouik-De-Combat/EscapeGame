@@ -4,8 +4,9 @@
 
 </header>
 <script src="son.js"></script>
-<body onload="main()">
-    
+<body onload="main()" style="z-index:2;">
+    <img id="chat" onclick="miaou()" style="position:absolute;height: 100px; width: 100px;"  src="img/chat.png">
+    <p id="miaou" style="position:absolute;"></p>
     <div class="conteneur">
         <div class="cote" id="cote1">
 
@@ -33,18 +34,33 @@
                     <img src="./img/beboo.gif" alt="" class="cote">
                 </div>
         </div>
-        
         <div class="cote" id="cote2">
         </div>
-    
     </div>
-
 </body>
 </html>
 
 
 
 <script>
+
+    function miaou() {
+        let miaou = document.getElementById("miaou");
+        miaou.innerHTML = '<img style="height:400%; width:400%" src="img/miaou.png">';
+        miaou.style.marginTop = Math.floor(Math.random() * 100)*10 + 'px';
+        miaou.style.marginLeft = Math.floor(Math.random() * 100)*10 + 'px';
+        console.log("done")
+        setTimeout(function() {
+            miaou.innerHTML = '';
+        }, 500)
+    }
+
+    function chat() {
+        let chat = document.getElementById("chat");
+        chat.style.marginTop = Math.floor(Math.random() * 100)*10 + 'px';
+        chat.style.marginLeft = Math.floor(Math.random() * 100)*10 + 'px';
+    }
+
     function random(input){
         var colours = [
             "red",
@@ -76,6 +92,7 @@
         btn
     }
     function main(){
+        setInterval(chat,1200);
         random("suivez les instructions pour la recevoir")
         if(!alert("bonjour vous venez de gagner une RTX 4090 ti 64go")) {
             generique.play();

@@ -5,21 +5,25 @@
 
     <body onload="main()">
         <p>e<sup>0</sup> = ? </p> <p id="res"></p> <p id="val"></p>
-        <input type="range" id="points" name="points" min="-100000" max="100000">
+        <input type="number" id="1" name="quantity" min="1" max="9">
+        <input type="number" id="2" name="quantity" min="1" max="9">
+        <input type="number" id="3" name="quantity" min="1" max="9">
+        <input type="number" id="4" name="quantity" min="1" max="9">
+        <input type="number" id="5" name="quantity" min="1" max="9">
         <p><button onclick="check()" id="tunemzttrapepas">valider</button></p>
     </body>
 </html>
 
 <script>
     function check(){
-        let range = document.getElementById("points");
+        let range = document.getElementById("1");
         let res = document.getElementById("res");
-        if (range.value != "1") {
-            alert("T'es pas une lumière toi !");
-        }
-        else {
+        if (range.value == "1" && document.getElementById("2").value == 0 && document.getElementById("3").value == 0 && document.getElementById("4").value == 0 && document.getElementById("5").value == 0) {
             alert("Lui il n'a pas que 2 neurone !");
             document.location.href = "enigme1.html";
+        }
+        else {
+            alert("T'es pas une lumière toi !");
         }
     }
 
@@ -30,6 +34,11 @@
     }
     
     function main(){
+        document.getElementById("1").value = 5;
+        document.getElementById("2").value = 6;
+        document.getElementById("3").value = 8;
+        document.getElementById("4").value = 2;
+        document.getElementById("5").value = 9;
         let range = document.getElementById("points");
         range.value = Math.random() * 100000 * 2 - 100000;
         setInterval(update,10);
@@ -40,9 +49,7 @@
     *{
         background-color:red ;
     }
-    input{
-        width: 100%;
-    }
+
     .conteneur{
         padding: 0%;
         margin: 0%;

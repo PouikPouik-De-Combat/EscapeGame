@@ -1,36 +1,36 @@
 
-var proute = new Audio("proute.mp3");
+var proute = new Audio("mp3/proute.mp3");
 proute.oncanplaythrough = function ( ) { }
 proute.onended = function ( ) { }
 
-var adroite = new Audio("adroite.mp3");
+var adroite = new Audio("mp3/adroite.mp3");
 adroite.oncanplaythrough = function ( ) { }
 adroite.onended = function ( ) { }
 
-var againtoujourpasla = new Audio("againtoujourpasla.mp3");
-auagaintoujourpasladio.oncanplaythrough = function ( ) { }
+var againtoujourpasla = new Audio("mp3/againtoujourpasla.mp3");
+againtoujourpasla.oncanplaythrough = function ( ) { }
 againtoujourpasla.onended = function ( ) { }
 
-var agauche = new Audio("agauche.mp3");
+var agauche = new Audio("mp3/agauche.mp3");
 agauche.oncanplaythrough = function ( ) { }
 agauche.onended = function ( ) { }
 
-var plusvite = new Audio("plusvite.mp3");
+var plusvite = new Audio("mp3/plusvite.mp3");
 plusvite.oncanplaythrough = function ( ) { }
 plusvite.onended = function ( ) { }
 
-var suuu = new Audio("suuu.mp3");
+var suuu = new Audio("mp3/suuu.mp3");
 suuu.oncanplaythrough = function ( ) { }
 suuu.onended = function ( ) { }
 
-var toujourpasla = new Audio("toujourpasla.mp3");
+var toujourpasla = new Audio("mp3/toujourpasla.mp3");
 toujourpasla.oncanplaythrough = function ( ) { }
 toujourpasla.onended = function ( ) { }
 
-var agauche2 = new Audio("agauche2.mp3");
+var agauche2 = new Audio("mp3/agauche2.mp3");
 agauche2.oncanplaythrough = function ( ) { }
 agauche2.onended = function ( ) { }
 
-var generique = new Audio("generique.mp3");
+var generique = new Audio("mp3/generique.mp3");
 generique.oncanplaythrough = function ( ) { }
-agaugeneriqueche2.onended = function ( ) { }
+generique.onended = function ( ) { }

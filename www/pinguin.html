@@ -2,7 +2,7 @@
     <header>
 
     </header>
-
+    <script src="son.js"></script>
     <body onload="main()">
         <h1>bienvenue en enfer bis 2 le retour du roi remaster</h1>
         <div id="grille"></div>
@@ -10,6 +10,26 @@
 </html>
 
 <script>
+
+    function a() {
+        let temp = Math.floor(Math.random()*60);
+        if(temp<10){
+            adroite.play()
+        }else if(temp < 20){
+            againtoujourpasla.play()
+        }else if(temp < 30){
+            agauche.play()
+        }else if(temp < 40){
+            plusvite.play()
+        }else if(temp < 50){
+            agauche2.play()
+        }else{
+            toujourpasla.play()
+        }
+        
+    }
+
+
     let tourBot = true;
     let fini = false;
     let W = 5;
@@ -36,6 +56,7 @@
         document.getElementById("grille").innerHTML = txt;
     }
     function update() {
+        a()
         if(fini){
             if(gagne("X")){
                 alert("T es nul !");

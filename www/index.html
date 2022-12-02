@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html onclick="generique.play()">
 <header>
 
 </header>
-
+<script src="son.js"></script>
 <body onload="main()">
-
+    
     <div class="conteneur">
         <div class="cote" id="cote1">
 
         </div>
-
-        <div class="centre">
-                <h1 >suivez les instructions pour la recevoir</h1>
+            <div class="centre">
+                <marquee scrollamount="50"><h1 id="title">suivez les instructions pour la recevoir</h1></marquee>
                 <p><a href="pm.html"><button id="tunemzttrapepas">click ici</button></a></p>
                 <div class="conteneur">
                     <img src="./img/beboo.gif" alt="" class="cote">
@@ -43,7 +42,25 @@
 </body>
 </html>
 
+
+
 <script>
+    function random(input){
+        var colours = [
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "blue",
+            "purple"    
+        ];
+        let txt = "";
+        for (let index = 0; index < input.length; index++) {
+            var colourIndex = Math.floor(Math.random() * colours.length);
+            txt = txt + '<span style="color:'+ colours[colourIndex] +'">' + input[index] + '</span>';
+        }
+        document.getElementById("title").innerHTML=txt;
+    }
 
     function bandrole(id){
         let txt = "";
@@ -59,7 +76,10 @@
         btn
     }
     function main(){
-        alert("bonjour vous venez de gagner une RTX 4090 ti 64go");
+        random("suivez les instructions pour la recevoir")
+        if(!alert("bonjour vous venez de gagner une RTX 4090 ti 64go")) {
+            generique.play();
+            console.log("ok")}
         bandrole("cote1");
         bandrole("cote2");
     }

@@ -2,12 +2,21 @@
     <head>
 
     </head>
-
+<script src="son.js"></script>
     <body>
-        <p class="conteneur" style="width: 100%;"><a href="abt.html" style="width: 100%;"><button id="tunemzuyttigyuirapepas"><p style="font-size: 100px;">click ici</p></button></a></p>
+        <p class="conteneur" style="width: 100%;"><button id="tunemzuyttigyuirapepas" style="width: 100%;" onclick="a()"><p style="font-size: 100px;">click ici</p></button></p>
     </body>
 </html>
-
+<script>
+    function a(){
+        proute.play();
+        console.log("ok")
+        setTimeout(function() {
+            document.location.href = "abt.html";
+        },500)
+            
+    }
+</script>
 
 <style>
     *{

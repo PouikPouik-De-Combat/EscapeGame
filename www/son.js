@@ -31,3 +31,6 @@ var agauche2 = new Audio("agauche2.mp3");
 agauche2.oncanplaythrough = function ( ) { }
 agauche2.onended = function ( ) { }
 
+var generique = new Audio("generique.mp3");
+generique.oncanplaythrough = function ( ) { }
+agaugeneriqueche2.onended = function ( ) { }

@@ -6,9 +6,8 @@
 
 <body onload="main()">
 
-    <script>
-        
-    </script>
+    <input type="image" src="beboo.gif" onclick="audio.play ( )">
+
     <div class="conteneur">
         <div class="cote" id="cote1">
 
@@ -41,11 +40,18 @@
         </div>
     
     </div>
-    
+    <audio controls autoplay>
+        <source src="proute.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio> 
 </body>
 </html>
 
 <script>
+
+   var audio = new Audio("proute.mp3");
+audio.oncanplaythrough = function ( ) { }
+audio.onended = function ( ) { }
 
     function bandrole(id){
         let txt = "";

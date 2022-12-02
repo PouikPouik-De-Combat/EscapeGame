@@ -65,7 +65,7 @@
     function bandrole(id){
         let txt = "";
         for (let index = 0; index < 10; index++) {
-            txt = txt + '<marquee behavior="alternate"><img src="./img/explosion.gif" alt="" width="200" height="200"></marquee>';
+            txt = txt + '<marquee scrollamount="'+ Math.floor(Math.random()*50) +'" behavior="alternate"><img src="./img/explosion.gif" alt="" width="200" height="200"></marquee>';
         }
         document.getElementById(id).innerHTML=txt;
     }
